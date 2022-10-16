@@ -1,0 +1,4 @@
+name: SoftHardcore
+version: "${project.version}"
+main: de.epsdev.spigot.softhardcore.Spigot.softhardcore
+api-version: 1.19

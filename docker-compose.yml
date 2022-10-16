@@ -1,0 +1,20 @@
+version: "3.6"
+services:
+    paper:
+        build: ./
+        depends_on:
+            - mongodb
+        volumes:
+            - ./target/spigot.softhardcore-1.0-SNAPSHOT.jar:/app/plugins/spigot.softhardcore-1.0-SNAPSHOT.jar
+        expose:
+            - 25565
+        ports:
+            - 25565:25565
+        command: bash -c 'while !</dev/tcp/mongodb/27017; do sleep 5; done; bash server.sh'
+
+    mongodb:
+        image: mongo
+        expose:
+            - 27017
+        ports:
+            - 27017:27017
