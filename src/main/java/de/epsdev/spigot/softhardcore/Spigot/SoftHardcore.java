@@ -14,7 +14,7 @@ public final class SoftHardcore extends JavaPlugin {
     @Override
     public void onEnable() {
         server = getServer();
-        deathManager = new DeathManager();
+        deathManager = new DeathManager("mongodb://mongodb:27017");
 
         registerEvents();
     }
@@ -27,6 +27,6 @@ public final class SoftHardcore extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        deathManager.cleanUp();
     }
 }
