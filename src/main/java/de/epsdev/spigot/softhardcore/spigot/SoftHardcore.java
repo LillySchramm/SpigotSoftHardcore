@@ -1,7 +1,7 @@
-package de.epsdev.spigot.softhardcore.Spigot;
+package de.epsdev.spigot.softhardcore.spigot;
 
-import de.epsdev.spigot.softhardcore.Spigot.events.e_PlayerDeath;
-import de.epsdev.spigot.softhardcore.Spigot.events.e_PlayerJoin;
+import de.epsdev.spigot.softhardcore.spigot.events.e_PlayerDeath;
+import de.epsdev.spigot.softhardcore.spigot.events.e_PlayerJoin;
 import org.bukkit.Server;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;

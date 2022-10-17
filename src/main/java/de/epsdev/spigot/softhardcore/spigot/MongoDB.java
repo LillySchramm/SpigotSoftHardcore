@@ -1,4 +1,4 @@
-package de.epsdev.spigot.softhardcore.Spigot;
+package de.epsdev.spigot.softhardcore.spigot;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;

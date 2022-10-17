@@ -1,8 +1,7 @@
-package de.epsdev.spigot.softhardcore.Spigot;
+package de.epsdev.spigot.softhardcore.spigot;
 
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.UpdateOptions;
 import com.mongodb.client.model.Updates;

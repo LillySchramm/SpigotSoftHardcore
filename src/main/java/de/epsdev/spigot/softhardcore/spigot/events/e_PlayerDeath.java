@@ -1,6 +1,6 @@
-package de.epsdev.spigot.softhardcore.Spigot.events;
+package de.epsdev.spigot.softhardcore.spigot.events;
 
-import de.epsdev.spigot.softhardcore.Spigot.SoftHardcore;
+import de.epsdev.spigot.softhardcore.spigot.SoftHardcore;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
