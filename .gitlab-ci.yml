@@ -17,6 +17,7 @@ maven_package:
 prettier:
     image: node:16
     stage: linting
+    needs: []
     script:
         - npm install -g prettier prettier-plugin-java
         - npx prettier --check .
