@@ -6,6 +6,7 @@ services:
             - mongodb
         volumes:
             - ./target/spigot.softhardcore-1.0-SNAPSHOT.jar:/app/plugins/spigot.softhardcore-1.0-SNAPSHOT.jar
+            - ./.config:/app/plugins/SoftHardcore
         expose:
             - 25565
         ports:

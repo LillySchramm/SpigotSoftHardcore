@@ -8,6 +8,7 @@ import com.mongodb.client.model.Updates;
 import java.time.Instant;
 import java.util.HashMap;
 import java.util.UUID;
+import java.util.logging.Level;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 
@@ -15,12 +16,27 @@ public class DeathManager {
 
     private MongoDB mongoDB;
     private final HashMap<UUID, Long> deadPlayers = new HashMap<>();
-    private final Long DEATH_TIME = 120L;
+    private final Long deathTime;
 
-    public DeathManager() {}
+    public DeathManager(long deathTime) {
+        this.deathTime = deathTime;
+        SoftHardcore.plugin
+            .getLogger()
+            .log(
+                Level.WARNING,
+                "No MongoDB Uri was configured. Deaths will not persist between restarts."
+            );
+    }
 
-    public DeathManager(String connectionUri) {
+    public DeathManager(long deathTime, String connectionUri) {
+        this.deathTime = deathTime;
         this.mongoDB = new MongoDB(connectionUri);
+        SoftHardcore.plugin
+            .getLogger()
+            .log(
+                Level.INFO,
+                "MongoDB Uri was configured. Deaths will between restarts."
+            );
     }
 
     public void registerDeath(UUID playerUUID) {
@@ -54,11 +70,11 @@ public class DeathManager {
             }
         }
 
-        return lastDeath + DEATH_TIME - unixTimestamp;
+        return lastDeath + deathTime - unixTimestamp;
     }
 
     public String getFormattedDeathTime() {
-        return formatTime(DEATH_TIME);
+        return formatTime(deathTime);
     }
 
     public static String formatTime(long secs) {
