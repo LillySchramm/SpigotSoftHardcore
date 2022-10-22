@@ -5,7 +5,7 @@ services:
         depends_on:
             - mongodb
         volumes:
-            - ./target/spigot.softhardcore-1.0-SNAPSHOT.jar:/app/plugins/spigot.softhardcore-1.0-SNAPSHOT.jar
+            - ./target/softhardcore-1.0.0.jar:/app/plugins/softhardcore-1.0.0.jar
             - ./.config:/app/plugins/SoftHardcore
         expose:
             - 25565

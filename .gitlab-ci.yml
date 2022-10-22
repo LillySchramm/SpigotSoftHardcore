@@ -1,0 +1,34 @@
+stages:
+    - build
+    - publish
+    - linting
+
+maven_package:
+    image: maven:3.8.4-eclipse-temurin-16
+    stage: build
+    artifacts:
+        untracked: false
+        expire_in: 7 days
+        paths:
+            - target/softhardcore-*.jar
+    script:
+        - mvn clean package
+
+prettier:
+    image: node:16
+    stage: linting
+    needs: []
+    script:
+        - npm install -g prettier prettier-plugin-java
+        - npx prettier --check .
+
+publish_to_github:
+    image: registry01.eps-dev.de/gitlab/releaseassistant/spigot-soft-hardcore
+    stage: publish
+    rules:
+        - if: $CI_COMMIT_TAG
+    needs:
+        - maven_package
+    script:
+        - mv target/softhardcore-*.jar ./
+        - python /main.py
