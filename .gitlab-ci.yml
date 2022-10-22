@@ -10,7 +10,7 @@ maven_package:
         untracked: false
         expire_in: 7 days
         paths:
-            - target/spigot.softhardcore-*.jar
+            - target/softhardcore-*.jar
     script:
         - mvn clean package
 
@@ -21,14 +21,14 @@ prettier:
     script:
         - npm install -g prettier prettier-plugin-java
         - npx prettier --check .
-#publish_to_github:
-#    image: registry01.eps-dev.de/gitlab/releaseassistant/main
-#    stage: publish
-#    rules:
-#        - if: $CI_COMMIT_TAG
-#    needs:
-#      - maven_package
-#    script:
-#        - mv target/minecord-*.jar ./
-#        - python /main.py
 
+publish_to_github:
+    image: registry01.eps-dev.de/gitlab/releaseassistant/spigot-soft-hardcore
+    stage: publish
+    rules:
+        - if: $CI_COMMIT_TAG
+    needs:
+        - maven_package
+    script:
+        - mv target/softhardcore-*.jar ./
+        - python /main.py
