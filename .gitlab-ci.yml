@@ -4,7 +4,7 @@ stages:
     - linting
 
 maven_package:
-    image: maven:3.8.4-eclipse-temurin-16
+    image: maven:3.8.5-eclipse-temurin-16
     stage: build
     artifacts:
         untracked: false
