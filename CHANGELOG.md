@@ -4,7 +4,7 @@
 
 ### Changed
 
-- Bump dependencies.
+-   Bump dependencies.
 
 ## 1.0.0
 
