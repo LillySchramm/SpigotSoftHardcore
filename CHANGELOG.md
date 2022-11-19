@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1
+
+### Changed
+
+- Bump dependencies.
+
 ## 1.0.0
 
 The initial release!
