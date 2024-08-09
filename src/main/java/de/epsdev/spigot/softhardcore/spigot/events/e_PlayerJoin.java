@@ -3,7 +3,7 @@ package de.epsdev.spigot.softhardcore.spigot.events;
 import static de.epsdev.spigot.softhardcore.spigot.DeathManager.formatTime;
 
 import de.epsdev.spigot.softhardcore.spigot.SoftHardcore;
-import org.bukkit.ChatColor;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
