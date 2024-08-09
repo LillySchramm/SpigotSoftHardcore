@@ -19,7 +19,7 @@ public class e_PlayerDeath implements Listener {
             ChatColor.GREEN +
             player.getDisplayName() +
             ChatColor.RED +
-            "' died. He won't be able to join for: " +
+            "' died. They won't be able to join for: " +
             ChatColor.GOLD +
             SoftHardcore.deathManager.getFormattedDeathTime()
         );
